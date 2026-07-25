@@ -21,76 +21,74 @@ class SummaryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        height: 170,
-        decoration: BoxDecoration(
-          color: AppColors.card,
-          borderRadius: BorderRadius.circular(24),
-        ),
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  width: 44,
-                  height: 44,
-                  decoration: BoxDecoration(
-                    color: iconColor.withValues(alpha: .15),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    icon,
-                    color: iconColor,
-                    size: 22,
-                  ),
+    return Container(
+      height: 170,
+      decoration: BoxDecoration(
+        color: AppColors.card,
+        borderRadius: BorderRadius.circular(24),
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
                 ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.plusJakartaSans(
-                          fontSize: 13,
-                          color: Colors.white70,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          amount,
-                          style: GoogleFonts.plusJakartaSans(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                child: Icon(
+                  icon,
+                  color: iconColor,
+                  size: 22,
                 ),
-              ],
-            ),
-
-            const Spacer(),
-
-            SizedBox(
-              width: double.infinity,
-              height: 26,
-              child: CustomPaint(
-                painter: SparkLinePainter(lineColor),
               ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.plusJakartaSans(
+                        fontSize: 13,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        amount,
+                        style: GoogleFonts.plusJakartaSans(
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          const Spacer(),
+
+          SizedBox(
+            width: double.infinity,
+            height: 26,
+            child: CustomPaint(
+              painter: SparkLinePainter(lineColor),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

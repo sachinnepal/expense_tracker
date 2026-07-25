@@ -5,6 +5,8 @@ import '../widgets/balance_card.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/spending_overview_card.dart';
 import '../widgets/summary_card.dart';
+import '../widgets/categories_section.dart';
+import '../widgets/recent_transactions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,6 +57,14 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               const SpendingOverviewCard(),
+              const SizedBox(height: 24),
+
+              const CategoriesSection(),
+              const SizedBox(height: 28),
+
+              const RecentTransactions(),
+
+              const SizedBox(height: 120),
 
               const SizedBox(height: 24),
             ],
